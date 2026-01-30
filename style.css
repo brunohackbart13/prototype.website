@@ -1,0 +1,199 @@
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff6a00; /* Laranja da embalagem */
+    --secondary-color: #0072bc; /* Azul da água de coco */
+    --accent-color: #2ecc71; /* Verde do logo */
+    --text-dark: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: var(--white);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent-color);
+}
+
+.logo span { color: var(--primary-color); }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li { margin-left: 30px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-nav {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #ff8c00 0%, #ff6a00 100%);
+    color: var(--white);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span { color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+
+.hero-image img {
+    max-width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transform: rotate(2deg);
+    transition: 0.5s;
+}
+
+.hero-image img:hover { transform: rotate(0deg) scale(1.05); }
+
+/* Botões */
+.btn-primary {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* Sabores */
+.sabores { padding: 100px 0; background: white; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--primary-color); }
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    background: #fff;
+    border-bottom: 5px solid transparent;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card-morango { border-color: #e74c3c; }
+.card-coco { border-color: var(--secondary-color); }
+.card-laranja { border-color: var(--primary-color); }
+
+.card:hover { transform: translateY(-10px); }
+
+.card-icon { font-size: 3rem; margin-bottom: 20px; }
+
+/* Novos sabores - placeholders de imagem */
+.card-melancia { border-color: #e74c3c; }
+.card-maracuja { border-color: #f1c40f; }
+.card-maca { border-color: #27ae60; }
+
+.product-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.95rem;
+    overflow: hidden;
+}
+
+.product-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Footer */
+footer { background: #222; color: white; padding: 60px 0 20px; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.copyright { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.9rem; color: #888; }
+
+/* Brand (logo ao lado do nome) */
+.brand { display: flex; align-items: center; gap: 14px; }
+.site-logo { width: 64px; height: 64px; object-fit: contain; border-radius: 8px; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content { flex-direction: column; text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-image img { max-width: 100%; }
+    nav ul { display: none; } /* Simplicidade para mobile */
+    .btn-secondary { margin: 15px 0 0 0; display: block; }
+    .site-logo { width: 48px; height: 48px; }
+}
